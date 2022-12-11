@@ -1,0 +1,43 @@
+/* TYPOGRAPHY AND FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Signika+Negative&display=swap');
+
+/* CSS VARIABLES */
+:root{
+    --dark-brown-color:#232822;
+    --neutral-cream-color:#deb770;
+    --active-green-color:#62c7b7;
+    --light-brown-color:#754b2b;
+    --dark-blue-color:#5076a1;
+}
+
+/* UNIVERSAL CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+}
+
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    font-family: Signika Negative;
+}
+.nav-menu{
+    display: flex;
+    gap: 15px;
+}
+.nav-menu li{
+    text-decoration: none;
+    list-style: none;
+}
+
+/* HOME */
+#home{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--dark-brown-color);
+}
