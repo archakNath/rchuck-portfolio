@@ -4,6 +4,7 @@
 /* CSS VARIABLES */
 :root{
     --primary-color:#E5BD60;
+    --primary-color-light:#e5bd603b;
 }
 
 /* UNIVERSAL CSS */
@@ -15,9 +16,6 @@
 }
 html{
     scroll-behavior: smooth;
-}
-.hz-margin{
-    padding: 0 var(--horizontal-margin-spacing);
 }
 h1{
     font-size: var(--h1-size);
@@ -45,44 +43,87 @@ h3{
   }
 .text{
     font-family: 'Quicksand', sans-serif;
-    font-size: var(--text-size);
+    font-size: 15px;
     line-height: 1.3rem;
 }
-.huge-btn{
-    display: block;
-    font-size: 1rem;
-    background: transparent;
-    border: 1px solid #212121;
-    padding: 25px 50px;
-    border-radius: 50px;
+.contact-button{
+    text-align: center;
+    display: inline;
+    color: white;
+    background-color: #212121;
     width: fit-content;
-    margin: 30px 0;
+    padding: 18px 25px;
+    border-radius: 30px;
 }
-.huge-btn:hover{
-    color: grey;
-    border-color: grey;
+#about-me-contacts{
+    margin-top: 40px;
 }
-.v-reposition-container{
-    position: absolute;
-    left: 0;
-    width: 100vw;
+#about-me-contacts > a{
+    text-decoration: none;
 }
-.h-reposition-container{
-    width: 100vw;
-    position: relative;
-    top: 100vh;
+.contact-button:hover{
+    background-color: #313131;
+    transition: all 0.3s;
+}
+.fa-brands{
+    font-size: 30px;
+    margin: 0 2px;
+    padding: 14px 15px;
+    background-color: white;
+    border-radius: 100%;
+}
+.fa-brands-linkedin{
+    padding: 13px 15px;
+}
+.fa-brands-linkedin:hover{
+    background-color: #0A66C2;
+    transition: all 0.3s;
+    color: white;
+}
+.fa-brands-git:hover{
+    background-color: #6e5494;
+    transition: all 0.3s;
+    color: white;
+}
+.fa-brands-twitter:hover{
+    background-color: #00acee;
+    transition: all 0.3s;
+    color: white;
+}
+.socials-containter{
+    display: inline;
+    padding: 0;
+}
+@media (max-width:768px){
+
+    #about-me-contacts{
+        margin-top: 20px;
+        font-size: 15px;
+    }
+    .contact-button{
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+    }
+    .fa-brands{
+        margin: 15px 5px 0 5px;
+    }
+    .socials-containter{
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 
 /* HEADER */
 nav{
     height: 0;
     width: 100%;
-    margin-bottom: 20vh;
+    margin-bottom: 13vh;
 }
 label.logo{
     font-size: 30px;
-    line-height: 80px;
-    padding: 0 0 0 30px;
+    line-height: 50px;
+    padding: 0 0 0 15px;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -93,7 +134,7 @@ nav ul{
 }
 nav ul li{
     display: inline-block;
-    line-height: 80px;
+    line-height: 50px;
     margin: 0 5px;
 }
 nav ul li a{
@@ -105,22 +146,22 @@ nav ul li a{
     text-decoration: none;
     color: #212121;
 }
-a:hover{
+a:hover, .active{
     color: orange;
     transition: .5s;
 }
 .checkbtn{
     font-size: 20px;
     float: right;
-    line-height: 60px;
-    margin-right: 40px;
+    line-height: 50px;
+    margin-right: 15px;
     cursor: pointer;
     display: none;
 }
 #check{
     display: none;
 }
-@media (max-width:1000px){
+@media (max-width:768px){
     label.logo{
         font-size: 20px;
     }
@@ -132,6 +173,13 @@ a:hover{
     }
 }
 @media (max-width:570px){
+
+    .active{
+        color: #212121;
+    }
+    nav{
+        margin-bottom: 10vh;
+    }
     .checkbtn{
         display: block;
     }
@@ -139,12 +187,13 @@ a:hover{
         position: fixed;
         width: 100%;
         height: 100vh;
-        backdrop-filter: blur(5px);
-        top: 80px;
+        background-color: white;
+        top: 40px;
         font-weight: bold;
         left: -100%;
         text-align: center;
-        transition: all .5s;
+        opacity: 0;
+        transition: all .3s;
     }
     nav ul li{
         display: block;
@@ -154,18 +203,15 @@ a:hover{
     nav li ul a{
         font-size: 20px;
     }
-    a:hover, a.active{
-        background: none;
-        color: grey;
-    }
     #check:checked ~ ul{
         left: 0;
+        opacity: 1;
     }
 }
 
 /* ABOUT */
 #profile-pic{
-    padding: 15px;
+    padding: 20px;
 }
 #profile-pic-inside {
     background: url(/assets/img_resources/profile.png);
@@ -174,11 +220,13 @@ a:hover{
     background-size: cover;
     border-radius: 30px;
     overflow: hidden;
+    box-shadow: var(--primary-color) 0 0 70px;
 }
 #about-me{
-    padding: 15px;
+    padding: 20px;
 }
 #about-me-inside{
+    padding: 45px;
     background-image: url(/assets/img_resources/blur.jpg);
     height: 70vh;
     background-position: center;
@@ -186,18 +234,149 @@ a:hover{
     border-radius: 30px;
     overflow: hidden;
 }
-/* #about-me-blur{
-    backdrop-filter: blur(500px);
-    height: 110%;
-    width: 110%;
-} */
-@media (max-width:570px){
+.about-me-text{
+    font-size: 23px;
+    margin-top: 50px;
+    width: 90%;
+}
+.about-me-heading{
+    font-weight: bolder;
+    max-width: 80%;
+}
+@media (max-width:992px){
+    #about-me-inside{
+        padding: 40px;
+    }
+    
+    .about-me-heading{
+        font-size: 30px;
+    }
+    .about-me-text{
+        margin-top: 30px;
+        width: 100%;
+        font-size: 17px;
+    }
+}
+@media (max-width:768px){
+    #about-me-inside{
+        height: auto;
+        padding: 30px;
+    }
     #profile-pic-inside{
         height: 50vh;
+        box-shadow: var(--primary-color) 0 0 30px;
     }
+    .about-me-heading{
+        font-size: 20px;
+    }
+    .about-me-text{
+        margin-top: 20px;
+        width: 100%;
+        font-size: 15px;
+    }
+
 }
 /* @media (max-width:1000px){
     #profile-pic-inside{
         height: 50vh;
     }
 } */
+
+/* PROJECTS */
+#projects {
+    text-decoration: none;
+}
+.fa-code-fork{
+    padding: 12px 15px;
+    background-color: none;
+    color: white;
+    font-size: 30px;
+    transition: all .3s;
+    border-radius: 100px;
+}
+.fa-code-fork:hover{
+    color: #212121;
+    background-color: white;
+}
+.fa-code-fork:hover ~ .thick-7{
+    --d: 0;
+}
+.project-element{
+    margin: 20px;
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.project-element a{
+    text-decoration: none;
+}
+.project-element-inside{
+    text-shadow: wheat 0 0 5px;
+    color: white;
+    padding: 30px;
+}
+.project-element-inside h2{
+    font-weight: bold;
+}
+.project-element-1{
+    background-image: url(/assets/img_resources/project1.png);
+    background-position: center;
+    background-size: cover;
+}
+.project-element-2{
+    background-image: url(/assets/img_resources/project2.png);
+    background-position: center;
+    background-size: cover;
+}
+.thick-7 {
+    font-size: 30px;
+    display: inline;
+    padding: 5px 10px;
+    color: white;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.23) 0 0) 
+      left /var(--d, 0%) 100% no-repeat;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+.thick-7:hover{
+    --d:100%;
+}
+.project-element-1:hover{
+    box-shadow: skyblue 0 0 70px;
+    color: #fff;
+}
+.project-element-2:hover{
+    box-shadow: #CECCC7 0 0 70px;
+    color: #fff;
+}
+
+@media (max-width:768px){
+    .project-element{
+        height: 50vh;
+    }
+    .thick-7{
+     text-shadow: none;
+     color: white;
+     border-radius: 10px;
+     background:linear-gradient(#212121 0 0);
+    }
+}
+@media (max-width:992px){
+    .project-element-inside h2, .project-element-inside h3, .fa-code-fork, .thick-7{
+        font-size: 20px;
+    }
+}
+/* LETSTALK */
+#letstalk-me-inside{
+    padding: 45px;
+    background-image: url(/assets/img_resources/blur.jpg);
+    background-position: center;
+    margin: 20px;
+    background-size: cover;
+    border-radius: 30px;
+    overflow: hidden;
+}
