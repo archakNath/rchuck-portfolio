@@ -8,29 +8,112 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
+
+    <!-- *** NAVIGATION BAR *** -->
     <nav>
       <div class="container">
         <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
+
+        <!-- HAMBURGER ICON -->
+      <label for="check" class="checkbtn" id="ham">
           <i class="fas fa-bars"></i>
       </label>
+
+      <!-- LOGO NAME  -->
       <label class="logo">RChuck</label>
       
+      <!-- MENU ITEMS -->
       <ul class="text">
-          <li><a href="#story" onclick="myFunction()">ABOUT</a></li>
-          <li><a href="#stay" onclick="myFunction()">PROJECT</a></li>
-          <li><a href="#registry" onclick="myFunction()">LETS TALK</a></li>
+          <li><a href="#about" onclick="myFunction()" class="active">ABOUT</a></li>
+          <li><a href="#projects" onclick="myFunction()">PROJECT</a></li>
+          <li><a href="#letstalk" onclick="myFunction()">LETS TALK</a></li>
       </ul>
       </div>
   </nav>
+  <!-- *** NAVIGATION BAR ENDS *** -->
 
+  <!-- *** ABOUT SECTION *** -->
   <section class="container" id="about">
     <div class="row">
+      <!-- PROFILE PIC  -->
       <div class="col-md-4 order-md-2" id="profile-pic"><div id="profile-pic-inside"></div></div>
-      <div class="col-md-8 order-md-1" id="about-me"><div id="about-me-inside"><div id="about-me-blur"></div></div></div>
+      <!-- ABOUT ME -->
+      <div class="col-md-8 order-md-1" id="about-me">
+        <div id="about-me-inside">
+          <div class="text-part">
+            <h1 class="about-me-heading">Hello, I’m Archak,</h1>
+            <h2 class="about-me-heading"> Web-Android Developer and Data Science enthusiast.</h2>
+            <h3 class="about-me-text">I care a lot about problem solving and believe technological solutions can be cost effective.</h3>
+          </div>
+          <div id="about-me-contacts">
+            <a href="mailto:archak.nath2004@gmail.com" target="_blank">
+              <div class="contact-button">CONTACT ME</div>
+            </a>
+            <div class="socials-containter">
+              <a href="https://www.linkedin.com/in/archak-nath-a682aa247/" target="_blank"><i class="fa-brands fa-linkedin-in fa-brands-linkedin"></i></a>
+              <a href="https://github.com/archakNath" target="_blank"><i class="fa-brands fa-github fa-brands-git"></i></i></a>
+              <a href="https://twitter.com/NathArchak" target="_blank"><i class="fa-brands fa-twitter fa-brands-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+  <!-- *** ABOUT SECTION ENDS *** -->
+
+
+  <!-- *** PROJECTS *** -->
+  <section class="container" id="projects">
+
+    <div class="row">
+      
+      <div class="col-md-6"><div class="project-element project-element-1">
+        <div class="project-element-inside">
+          <h2>FrontEnd Web</h2>
+          <h3>Wedding Invitation WebPage</h3>
+          <a href="https://github.com/archakNath/wedding-invitation-website" target="_blank"><i class="fa-solid fa-code-fork"></i></a>
+          <a href="https://wedding-invitation-website.vercel.app/"><div class="thick-7 text"> Preview </div></a>
+        </div>
+      </div></div>
+
+
+      <div class="col-md-6"><div class="project-element project-element-2">
+        <div class="project-element-inside">
+          <h2>Android App</h2>
+          <h3>BMI Calculator App</h3>
+          <a href="https://github.com/archakNath/BMI_Calculator" target="_blank"><i class="fa-solid fa-code-fork"></i></a>
+        </div>
+      </div></div>
+
+    </div>
+  </section>
+  <!-- *** PROJECTS END *** -->
+
+  <!-- CONTACT US -->
+  <section id="letstalk" class="container">
+    <div class="col-md-12 order-md-1" id="letstalk-me">
+      <div id="letstalk-me-inside">
+        <div class="text-part">
+          <h1 class="about-me-heading">Wanna exchange some words?</h1>
+          <h3 class="about-me-text">Feel free to reach out for collaborations or just a friendly hello.</h3>
+        </div>
+        <div id="about-me-contacts">
+          <a href="mailto:archak.nath2004@gmail.com" target="_blank">
+            <div class="contact-button">CONTACT ME</div>
+          </a>
+          <div class="socials-containter">
+            <a href="https://www.linkedin.com/in/archak-nath-a682aa247/" target="_blank"><i class="fa-brands fa-linkedin-in fa-brands-linkedin"></i></a>
+            <a href="https://github.com/archakNath" target="_blank"><i class="fa-brands fa-github fa-brands-git"></i></i></a>
+            <a href="https://twitter.com/NathArchak" target="_blank"><i class="fa-brands fa-twitter fa-brands-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT US ENDS HERE  -->
+
   <script src="https://kit.fontawesome.com/7b12bcc245.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="/assets/main.js"></script>
   </body>
 </html>
