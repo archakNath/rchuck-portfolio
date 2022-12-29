@@ -3,41 +3,201 @@
 
 /* CSS VARIABLES */
 :root{
-    --dark-brown-color:#232822;
-    --neutral-cream-color:#deb770;
-    --active-green-color:#62c7b7;
-    --light-brown-color:#754b2b;
-    --dark-blue-color:#5076a1;
+    --primary-color:#E5BD60;
 }
 
 /* UNIVERSAL CSS */
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: Montserrat, sans-serif;
+    margin: 0;
+    font-family: Montserrat, serif;
+    color: #212121;
+}
+html{
+    scroll-behavior: smooth;
+}
+.hz-margin{
+    padding: 0 var(--horizontal-margin-spacing);
+}
+h1{
+    font-size: var(--h1-size);
+    font-weight: 500;
+    line-height: var(--h1-size);
+}
+h2{
+    font-size: var(--h2-size);
+    font-weight: bold;
+}
+h3{
+    font-size: var(--h3-size);
+    font-weight: 500;
+}
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+.text{
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--text-size);
+    line-height: 1.3rem;
+}
+.huge-btn{
+    display: block;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #212121;
+    padding: 25px 50px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 30px 0;
+}
+.huge-btn:hover{
+    color: grey;
+    border-color: grey;
+}
+.v-reposition-container{
+    position: absolute;
+    left: 0;
+    width: 100vw;
+}
+.h-reposition-container{
+    width: 100vw;
+    position: relative;
+    top: 100vh;
 }
 
 /* HEADER */
-header{
-    display: flex;
-    justify-content: space-between;
+nav{
+    height: 0;
+    width: 100%;
+    margin-bottom: 20vh;
 }
-.logo{
-    font-family: Signika Negative;
+label.logo{
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 0 0 30px;
+    font-weight: bold;
+    color: var(--primary-color);
 }
-.nav-menu{
-    display: flex;
-    gap: 15px;
-}
-.nav-menu li{
-    text-decoration: none;
+nav ul{
+    float: right;
+    margin-right: 20px;
     list-style: none;
 }
-
-/* HOME */
-#home{
-    height: 100vh;
-    width: 100%;
-    background-color: var(--dark-brown-color);
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
 }
+nav ul li a{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #212121;
+}
+a:hover{
+    color: orange;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 20px;
+    float: right;
+    line-height: 60px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width:1000px){
+    label.logo{
+        font-size: 20px;
+    }
+    nav ul li a{
+        font-size: 10px;
+    }
+    html{
+        font-size: 10px;
+    }
+}
+@media (max-width:570px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        top: 80px;
+        font-weight: bold;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav li ul a{
+        font-size: 20px;
+    }
+    a:hover, a.active{
+        background: none;
+        color: grey;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
+/* ABOUT */
+#profile-pic{
+    padding: 15px;
+}
+#profile-pic-inside {
+    background: url(/assets/img_resources/profile.png);
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    overflow: hidden;
+}
+#about-me{
+    padding: 15px;
+}
+#about-me-inside{
+    background-image: url(/assets/img_resources/blur.jpg);
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    overflow: hidden;
+}
+/* #about-me-blur{
+    backdrop-filter: blur(500px);
+    height: 110%;
+    width: 110%;
+} */
+@media (max-width:570px){
+    #profile-pic-inside{
+        height: 50vh;
+    }
+}
+/* @media (max-width:1000px){
+    #profile-pic-inside{
+        height: 50vh;
+    }
+} */
