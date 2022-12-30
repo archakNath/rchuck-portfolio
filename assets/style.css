@@ -309,8 +309,9 @@ a:hover, .active{
     border-radius: 30px;
     overflow: hidden;
     transition: all 0.3s;
+    cursor: pointer;
 }
-.project-element a{
+.col-md-6 a{
     text-decoration: none;
 }
 .project-element-inside{
