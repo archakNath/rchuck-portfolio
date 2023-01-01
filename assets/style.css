@@ -315,7 +315,6 @@ a:hover, .active{
     text-decoration: none;
 }
 .project-element-inside{
-    text-shadow: wheat 0 0 5px;
     color: white;
     padding: 30px;
 }
@@ -330,21 +329,9 @@ a:hover, .active{
 .project-element-2{
     background-image: url(/assets/img_resources/project2.png);
     background-position: center;
-    background-size: cover;
-}
-.thick-7 {
-    font-size: 25px;
-    display: inline;
-    padding: 5px 10px;
-    color: white;
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.23) 0 0) 
-      left /var(--d, 0%) 100% no-repeat;
-    transition: 0.5s;
-    cursor: pointer;
-  }
-.thick-7:hover{
-    --d:100%;
+    background-size: cover;}
+.project-element-2 h2{
+    color: grey;
 }
 .project-element-1:hover{
     box-shadow: skyblue 0 0 70px;
